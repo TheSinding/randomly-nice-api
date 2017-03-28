@@ -4,6 +4,7 @@
   "description": "Tells you randomly nice things!",
   "main": "index.js",
   "scripts": {
+    "start": "node ./src",
     "test": "nodemon ./src"
   },
   "repository": {
