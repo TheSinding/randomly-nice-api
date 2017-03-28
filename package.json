@@ -4,7 +4,7 @@
   "description": "Tells you randomly nice things!",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "test": "nodemon ./src"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,12 @@
   },
   "homepage": "https://github.com/TheSinding/randomlyNiceRest#readme",
   "dependencies": {
-    "express": "^4.15.2"
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "express-hbs": "^1.0.4",
+    "stache": "^0.1.0"
+  },
+  "devDependencies": {
+    "tachyons": "^4.6.1"
   }
 }
