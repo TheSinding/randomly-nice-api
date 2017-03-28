@@ -1,0 +1,28 @@
+{
+  "name": "randomly_nice_rest",
+  "version": "1.0.0",
+  "description": "Tells you randomly nice things!",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheSinding/randomlyNiceRest.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "nice",
+    "random"
+  ],
+  "author": "Simon Sinding",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TheSinding/randomlyNiceRest/issues"
+  },
+  "homepage": "https://github.com/TheSinding/randomlyNiceRest#readme",
+  "dependencies": {
+    "express": "^4.15.2"
+  }
+}
