@@ -6,6 +6,7 @@ body {
 .background {
   background: -webkit-linear-gradient(top, rgb(161,219,255) 0%,rgb(203,235,255) 53%,rgb(240,249,255) 100%); /* Chrome10+,Safari5.1+ */
   background-size: 100% 100%;
+  overflow: hidden;
 }
 
 .in-front{
