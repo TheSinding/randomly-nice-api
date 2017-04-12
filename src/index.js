@@ -8,15 +8,19 @@ var express    = require('express');        // call express
 var app        = express();                 // define our app using express
 var hbs        = require('express-hbs');
 var bodyParser = require('body-parser');
-var path = require('path');
-
+var mongoose   = require('mongoose');
+var cors			 = require('cors');
+var path       = require('path');
 
 var { sentences } = require('./json/sentences.json');
 var { positiveWords } = require('./json/positiveWords.json');
+
+
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+app.use(cors());
 app.set('view engine', 'hbs');
 app.engine('hbs', hbs.express4({
   layoutsDir: __dirname + '/views/layouts'
@@ -26,16 +30,11 @@ app.use(express.static(__dirname + '/assets')); // Being able to import from ass
 
 app.set('views', path.join(__dirname,'/views'));
 
+var port = process.env.PORT || 9000;        
+var router = express.Router();              
 
-var port = process.env.PORT || 3000;        // set our port
-
-// ROUTES FOR OUR API
-// =============================================================================
-var router = express.Router();              // get an instance of the express Router
-
-// test route to make sure everything is working (accessed at GET http://localhost:8080/api)
 router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });
+    res.json({ message: 'Yay' });
 });
 
 router.get('/name/:name', function(req, res) {
@@ -71,4 +70,4 @@ app.use('/', function(req, res){
 // START THE SERVER
 // =============================================================================
 app.listen(port);
-console.log('Magic happens on port ' + port);
+console.log('Get some love on port ' + port);
