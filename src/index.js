@@ -1,73 +1,40 @@
-// server.js
+import http from 'http';
+import express from 'express';
+import cors from 'cors';
+import morgan from 'morgan';
+import bodyParser from 'body-parser';
+import initializeDb from './db';
+import middleware from './middleware';
+import api from './api';
+import config from './config.json';
 
-// BASE SETUP
-// =============================================================================
+let app = express();
+app.server = http.createServer(app);
 
-// call the packages we need
-var express    = require('express');        // call express
-var app        = express();                 // define our app using express
-var hbs        = require('express-hbs');
-var bodyParser = require('body-parser');
-var mongoose   = require('mongoose');
-var cors			 = require('cors');
-var path       = require('path');
+// logger
+app.use(morgan('dev'));
 
-var { sentences } = require('./json/sentences.json');
-var { positiveWords } = require('./json/positiveWords.json');
-
-
-// configure app to use bodyParser()
-// this will let us get the data from a POST
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-app.use(cors());
-app.set('view engine', 'hbs');
-app.engine('hbs', hbs.express4({
-  layoutsDir: __dirname + '/views/layouts'
+// 3rd party middleware
+app.use(cors({
+	exposedHeaders: config.corsHeaders
 }));
 
-app.use(express.static(__dirname + '/assets')); // Being able to import from assets in html
+app.use(bodyParser.json({
+	limit : config.bodyLimit
+}));
 
-app.set('views', path.join(__dirname,'/views'));
+// connect to db
+initializeDb( db => {
 
-var port = process.env.PORT || 9000;        
-var router = express.Router();              
+	// internal middleware
+	app.use(middleware({ config, db }));
 
-router.get('/', function(req, res) {
-    res.json({ message: 'Yay' });
+	// api router
+	app.use('/api', api({ config, db }));
+
+	app.server.listen(process.env.PORT || config.port || 9000);
+
+	console.log(`Started on port ${app.server.address().port}`);
 });
 
-router.get('/name/:name', function(req, res) {
-  var random = Math.floor(Math.random() * positiveWords.length);
-    res.json(
-      { message: req.params.name + ' are ' + positiveWords[random]
-        , topic: 'name'
-      }
-);
-});
-
-router.get('/sentences', function(req, res) {
-  var random = Math.floor(Math.random() * sentences.length);
-    res.json(
-      {
-        message: sentences[random]
-        , topic: 'sentences'
-      });
-});
-
-// more routes for our API will happen here
-
-// REGISTER OUR ROUTES -------------------------------
-// all of our routes will be prefixed with /api
-app.use('/api', router);
-app.use('/', function(req, res){
-  var random = Math.floor(Math.random() * sentences.length);
-  res.render('index', {
-    sentence: sentences[random],
-  });
-});
-
-// START THE SERVER
-// =============================================================================
-app.listen(port);
-console.log('Get some love on port ' + port);
+export default app;
