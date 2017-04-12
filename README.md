@@ -63,6 +63,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 ## Authors
 
 * **Simon Sinding** - *Initial work* 
+* **Peter Brink** - *Cosmetic work on the sample page*
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
