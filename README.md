@@ -6,8 +6,6 @@ The world of the internet, can sometimes be a grim place, and very negative.
 
 This project aims to combat that "trend".
 
-Also just doing it for fuun <3 
-
 
 ## Getting Started
 
