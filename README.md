@@ -4,7 +4,9 @@ An API that say's randomly nice things to you!
 
 The world of the internet, can sometimes be a grim place, and very negative.
 
-This a project to combat that "trend".
+This project aims to combat that "trend".
+
+Also just doing it for fuun <3 
 
 
 ## Getting Started
