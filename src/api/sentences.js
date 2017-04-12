@@ -1,7 +1,7 @@
 import resource from 'resource-router-middleware';
 import sentences from '../models/sentences';
 
-export default () => resource({
+export default ({ db }) => resource({
 	/** Property name to store preloaded entity on `request`. */
 	id : 'sentence',
 

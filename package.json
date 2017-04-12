@@ -1,5 +1,5 @@
 {
-  "name": "Randomly Nice",
+  "name": "randomly-nice",
   "version": "0.1.0",
   "description": "A very nice api.",
   "main": "dist",
@@ -32,6 +32,8 @@
     "compression": "^1.5.2",
     "cors": "^2.7.1",
     "express": "^4.13.3",
+    "mongodb": "^2.2.25",
+    "mongoose": "^4.9.4",
     "morgan": "^1.8.0",
     "resource-router-middleware": "^0.6.0"
   },
