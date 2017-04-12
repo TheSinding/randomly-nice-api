@@ -1,35 +1,47 @@
 {
-  "name": "randomly_nice_rest",
-  "version": "1.0.0",
-  "description": "Tells you randomly nice things!",
-  "main": "index.js",
+  "name": "randomly-nice",
+  "version": "0.1.0",
+  "description": "A very nice api.",
+  "main": "dist",
   "scripts": {
-    "start": "node ./src",
-    "test": "nodemon ./src"
+    "dev": "nodemon -w src --exec \"babel-node src --presets es2015,stage-0\"",
+    "build": "babel src -s -D -d dist --presets es2015,stage-0",
+    "start": "node dist",
+    "prestart": "npm run -s build",
+    "test": "eslint src"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/TheSinding/randomlyNiceRest.git"
+  "eslintConfig": {
+    "extends": "eslint:recommended",
+    "parserOptions": {
+      "ecmaVersion": 7,
+      "sourceType": "module"
+    },
+    "env": {
+      "node": true
+    },
+    "rules": {
+      "no-console": 0,
+      "no-unused-vars": 1
+    }
   },
-  "keywords": [
-    "rest",
-    "api",
-    "nice",
-    "random"
-  ],
-  "author": "Simon Sinding",
+  "repository": "TheSinding/Randomly-nice",
+  "author": "Simon Sinding <sinding2000@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/TheSinding/randomlyNiceRest/issues"
-  },
-  "homepage": "https://github.com/TheSinding/randomlyNiceRest#readme",
   "dependencies": {
-    "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "express-hbs": "^1.0.4",
-    "stache": "^0.1.0"
+    "body-parser": "^1.13.3",
+    "compression": "^1.5.2",
+    "cors": "^2.7.1",
+    "express": "^4.13.3",
+    "mongoose": "^4.9.4",
+    "morgan": "^1.8.0",
+    "resource-router-middleware": "^0.6.0"
   },
   "devDependencies": {
-    "tachyons": "^4.6.1"
+    "babel-cli": "^6.9.0",
+    "babel-core": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "eslint": "^3.1.1",
+    "nodemon": "^1.9.2"
   }
 }

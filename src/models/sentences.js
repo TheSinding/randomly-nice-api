@@ -1,4 +1,4 @@
-{
+const sentences = {
   "sentences": [
     "Your smile is contagious.",
     "You look great today.",
@@ -335,4 +335,6 @@
     "Your every thought and motion contributes to the beauty of the universe.",
     "You make me want to frolic in a field."
   ]
-}
+};
+
+export default sentences;
