@@ -32,7 +32,7 @@ initializeDb( db => {
 	// api router
 	app.use('/api', api({ config, db }));
 
-	app.server.listen(process.env.PORT || config.port || 9000);
+	app.server.listen(process.env.PORT || config.port );
 
 	console.log(`Started on port ${app.server.address().port}`);
 });

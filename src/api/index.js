@@ -10,7 +10,7 @@ export default ({ config, db }) => {
 	// mount the facets resource
 	api.use('/facets', facets({ config, db }));
 
-	api.use('/sentences', sentences({ db }));
+	api.use('/sentences', sentences({ config, db }));
 	
 	// perhaps expose some API metadata at the root
 	api.get('/', (req, res) => {

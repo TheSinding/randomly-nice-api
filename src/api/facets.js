@@ -22,6 +22,7 @@ export default ({ config, db }) => resource({
 
 	/** POST / - Create a new entity */
 	create({ body }, res) {
+		console.log(body);
 		body.id = facets.length.toString(36);
 		facets.push(body);
 		res.json(body);

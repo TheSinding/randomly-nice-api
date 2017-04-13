@@ -1,7 +1,9 @@
 import resource from 'resource-router-middleware';
 import sentences from '../models/sentences';
+import sentiment from 'sentiment';
+import tokenizer from '../lib/tokenizer';
 
-export default ({ db }) => resource({
+export default ({ config, db }) => resource({
 	/** Property name to store preloaded entity on `request`. */
 	id : 'sentence',
 
@@ -25,12 +27,27 @@ export default ({ db }) => resource({
 		res.json(sentences);
 	},
 
-	// /** POST / - Create a new entity */
-	// create({ body }, res) {
-	// 	body.id = sentences.length.toString(36);
-	// 	sentences.push(body);
-	// 	res.json(body);
-	// },
+	/** POST / - Create a new entity */
+	create({ body }, res) {
+		let response = {};
+		let { sentence } = body;
+		if(sentence.constructor === Array ){
+			sentence.forEach( (element) => {
+				let wordCount = tokenizer(element).length;
+				if(wordCount < config.maxWordCount) {	
+					let score = sentiment(element);
+					let accepted = false;
+					if(score.score > 0) {
+						accepted = true;
+					}
+					response[element] = { "Score": score, "accepted": accepted };
+				} else {
+					response[element] = { "Error": "Sentence was too long, maximum " + config.maxWordCount + " words or under!", "accepted": false };				
+				}
+			});
+		}
+		res.json(response);
+	},
 
 	/** GET /:id - Return a given entity */
 	read({ sentence }, res) {

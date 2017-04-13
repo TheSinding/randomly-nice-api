@@ -34,7 +34,8 @@
     "express": "^4.13.3",
     "mongoose": "^4.9.4",
     "morgan": "^1.8.0",
-    "resource-router-middleware": "^0.6.0"
+    "resource-router-middleware": "^0.6.0",
+    "sentiment": "^4.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.9.0",

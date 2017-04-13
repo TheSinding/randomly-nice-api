@@ -2069,7 +2069,7 @@ mongodb-core@2.1.9:
     bson "~1.0.4"
     require_optional "~1.0.0"
 
-mongodb@2.2.25, mongodb@^2.2.25:
+mongodb@2.2.25:
   version "2.2.25"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-2.2.25.tgz#d3b25dad00eda2bdfcbc996210ba082ac686a6b6"
   dependencies:
@@ -2674,6 +2674,10 @@ send@0.15.1:
     on-finished "~2.3.0"
     range-parser "~1.2.0"
     statuses "~1.3.1"
+
+sentiment@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/sentiment/-/sentiment-4.0.0.tgz#093e03052cfc5740ae7610dc84a093304d119166"
 
 serve-static@1.12.1:
   version "1.12.1"
