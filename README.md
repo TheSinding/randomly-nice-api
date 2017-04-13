@@ -52,10 +52,6 @@ PORT=8080 npm start
 
 * [Express Boiler Plate](https://github.com/developit/express-es6-rest-api/) - ES6 Express boiler plate 
 
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
 ## Authors
 
 * **Simon Sinding** - *Initial work* 
