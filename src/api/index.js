@@ -10,7 +10,7 @@ export default ({ config, db }) => {
 
 	api.use('/sentences', sentences({ config, db, SentencesModel }));
 
-	api.use('/sentences/random', sentences({ config, db, SentencesModel }));
+	api.use('/sentences', sentences({ config, db, SentencesModel }));
 	
 	// perhaps expose some API metadata at the root
 	api.get('/', (req, res) => {
