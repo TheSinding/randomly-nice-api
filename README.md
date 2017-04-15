@@ -1,4 +1,4 @@
-![alt tag](https://ptpb.pw/2-Qw.png)
+![alt tag](https://ptpb.pw/zASr.png)
 
 An API that say's randomly nice things to you!
 
@@ -42,19 +42,15 @@ Start the server
 
 ```sh
 # Start development live-reload server
-PORT=8080 npm run dev
+npm run dev
 
 # Start production server:
-PORT=8080 npm start
+npm start
 ```
 
 ## Built With
 
 * [Express Boiler Plate](https://github.com/developit/express-es6-rest-api/) - ES6 Express boiler plate 
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
 
 ## Authors
 
