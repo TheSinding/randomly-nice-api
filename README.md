@@ -76,7 +76,7 @@ example response
     ]
   },
   { 
-  ...
+   ...
   }
 ]
 ```
@@ -121,11 +121,10 @@ GET /sentences/random   # Adds a new sentence if it's approved
 example request
 ```json
 {
-  sentences: [
+  "sentences": [
     "You eyes are as beautiful as the sea itself",
-    "You are an idiot",
-    ...
-  ]
+    "You are an idiot"
+    ]
 }
 ```
 
