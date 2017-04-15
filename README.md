@@ -95,7 +95,7 @@ example response
 
 
 ```http
-POST /sentences  # Returns a random sentence as json
+GET /sentences/random  # Returns a random sentence as json
 ```
 example response
 ```json
