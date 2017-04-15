@@ -1,4 +1,4 @@
-![alt tag](https://ptpb.pw/2-Qw.png)
+![alt tag](https://ptpb.pw/zASr.png)
 
 An API that say's randomly nice things to you!
 
