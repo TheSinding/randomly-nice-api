@@ -115,7 +115,7 @@ The POST request, is checked against the AFINN 165 list.
 If it's approved it adds its to the database.
 
 ```http
-GET /sentences/random   # Adds a new sentence if it's approved
+GET /sentences  # Adds a new sentence if it's approved
 ```
 
 example request
